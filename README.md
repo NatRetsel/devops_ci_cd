@@ -1,1 +1,1 @@
-# Unit tests and email notifications CI/CD
+# Unit tests and email notification CI/CD
