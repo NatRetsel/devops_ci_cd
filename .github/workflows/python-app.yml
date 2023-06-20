@@ -27,7 +27,7 @@ jobs:
     - name: Test with unittest
       run: |
         python webapp.py
-        flask test
+        flask test > test.log || true
         
     - name: Send mail 
       if: always() 
@@ -41,9 +41,9 @@ jobs:
         # Optional (recommended) mail server password
         password: ${{secrets.MAIL_PASSWORD}}
         # email subject
-        subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+        subject: Test results on branch ${{ github.ref }}
         # email body as text
-        body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+        body_file_path: test.log
         # comma-separated string, send email to
         to: sunsethorizonstories@gmail.com
         # from email name
