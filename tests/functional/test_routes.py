@@ -10,7 +10,7 @@ class RoutesTestCase(unittest.TestCase):
         """
         self.app = create_app('testing')
         self.app = self.app.test_client()
-        with app.app_context():
+        with self.app.app_context():
             db.create_all()
     
     def test_home_page(self)->None:
