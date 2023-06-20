@@ -47,6 +47,6 @@ jobs:
         # comma-separated string, send email to
         to: sunsethorizonstories@gmail.com
         # from email name
-        from: ${{github.actor}} <noreply@github.actions.com>
+        from: ${{ github.actor }} <noreply@github.actions.com>
 
     
