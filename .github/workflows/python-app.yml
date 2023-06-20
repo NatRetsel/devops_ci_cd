@@ -43,7 +43,7 @@ jobs:
         # email subject
         subject: Test results on branch ${{ github.ref }}
         # email body as text
-        body_file_path: test.log
+        attachments: test.log
         # comma-separated string, send email to
         to: sunsethorizonstories@gmail.com
         # from email name
