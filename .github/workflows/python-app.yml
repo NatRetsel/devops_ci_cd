@@ -26,7 +26,7 @@ jobs:
         pip install -r requirements.txt
     - name: Test with unittest
       run: |
-        python -m unittest discover -s tests -p "test_*.py" > test.txt 
+        python -m unittest discover -s tests -p "test_*.py"
         
     - name: Send mail 
       if: always() 
@@ -40,9 +40,9 @@ jobs:
         # Optional (recommended) mail server password
         password: ${{secrets.MAIL_PASSWORD}}
         # email subject
-        subject: Test results on branch ${{ github.ref }}
+        subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
         # email body as text
-        attachments: test.txt
+        body: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
         # comma-separated string, send email to
         to: sunsethorizonstories@gmail.com
         # from email name
