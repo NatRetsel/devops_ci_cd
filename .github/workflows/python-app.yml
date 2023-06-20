@@ -26,7 +26,7 @@ jobs:
         pip install -r requirements.txt
     - name: Test with unittest
       run: |
-        gitroot
+        cd/
         python -m unittest discover -s tests -p "test_*.py"
         
     - name: Send mail 
