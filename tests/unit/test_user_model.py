@@ -11,7 +11,7 @@ class UserModelTestCase(unittest.TestCase):
         u = User()
         password = 'cat'
         u.set_password(password)
-        self.assertTrue(password == u.password_hash)
+        self.assertTrue(password != u.password_hash)
     
     def test_no_password_getter(self):
         """
