@@ -27,7 +27,7 @@ jobs:
     - name: Test with unittest
       run: |
         python webapp.py
-        flask test > test.log || true
+        flask test > test.txt || true
         
     - name: Send mail 
       if: always() 
