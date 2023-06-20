@@ -9,9 +9,10 @@ class RoutesTestCase(unittest.TestCase):
         Brand new database gets created for tests with create_all().
         """
         self.app = create_app('testing')
-        self.app = self.app.test_client()
         with self.app.app_context():
             db.create_all()
+        self.app = self.app.test_client()
+        
     
     def test_home_page(self)->None:
         """
