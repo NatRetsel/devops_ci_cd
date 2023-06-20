@@ -41,9 +41,9 @@ jobs:
         # Optional (recommended) mail server password
         password: ${{secrets.MAIL_PASSWORD}}
         # email subject
-        subject: Test results on branch ${{ github.ref }}
+        subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
         # email body as text
-        attachments: test.txt
+        body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
         # comma-separated string, send email to
         to: sunsethorizonstories@gmail.com
         # from email name
