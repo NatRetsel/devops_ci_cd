@@ -26,8 +26,7 @@ jobs:
         pip install -r requirements.txt
     - name: Test with unittest
       run: |
-        export FLASK_APP=webapp.py
-        flask test > test.txt || true
+        python -m unittest discover -s tests -p "test_*.py"
         
     - name: Send mail 
       if: always() 
