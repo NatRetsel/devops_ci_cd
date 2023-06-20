@@ -36,6 +36,6 @@ class BasicsTestCase(unittest.TestCase):
         When unittest is invoked
         Then check if the application configuration is set to testing.
         """
-        self.assertFalse(current_app.config['TESTING'])
+        self.assertTrue(current_app.config['TESTING'])
      
     
