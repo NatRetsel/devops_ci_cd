@@ -26,7 +26,7 @@ jobs:
         pip install -r requirements.txt
     - name: Test with unittest
       run: |
-        python webapp.py
+        export FLASK_APP=webapp.py
         flask test > test.txt || true
         
     - name: Send mail 
