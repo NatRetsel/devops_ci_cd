@@ -47,7 +47,7 @@ class RegisterLoginTestCase(unittest.TestCase):
             'email': 'loreumipsum@email.com',
             'password': 'testpassword'
         }, follow_redirects=True)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         self.assertIn(b'Hello loreum', response.data)
         
         response = self.client.get('/auth/logout', follow_redirects=True)
