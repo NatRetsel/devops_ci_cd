@@ -2,6 +2,8 @@
 
 CI/CD pipeline implemented using GitHub Actions on a clone of one of my projects.
 
+![ci_cd_figure](/screenshots/ci_cd_diagram.png 'ci cd workflow')
+
 Upon a commit or pull request on the main branch:
 
 * A Python virtual environment is created with version 3.8
